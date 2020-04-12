@@ -17,8 +17,8 @@ function AreaDropdown(props) {
         props.updateArea(newArea);
       }}
     >
-      {Areas.map((key, name) => {
-        return <option value={key}>{name}</option>;
+      {Object.keys(Areas).map(key => {
+        return <option value={key}>{Areas[key]}</option>;
       })
       /*<option value="sf">San Francisco</option>
       <option value="eastbay">East Bay</option>
