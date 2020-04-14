@@ -13,7 +13,7 @@ export function ExtraActionButtons(props) {
   const takeout = { url: place.takeoutURL, log: "takeout", text: takeoutText };
   const donation = { url: place.donationURL, log: "donate", text: donateText };
   const toRender = [takeout, donation].filter(value => {
-    return value.url !== null;
+    return value.url !== null && value.url !== "";
   });
   var spansToRender = [];
   toRender.forEach((value, index) => {
