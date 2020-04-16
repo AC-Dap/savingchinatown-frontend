@@ -52,6 +52,8 @@ class App extends React.Component {
       navigator.geolocation.getCurrentPosition(pos => {
         var minDist = Number.MAX_SAFE_INTEGER;
         Object.keys(Neighborhoods).forEach(val => {
+          if (!(Neighborhoods[val][0].lat && Neighborhoods[val][0].lng)) return;
+
           const lat = Neighborhoods[val][0].lat - pos.coords.latitude;
           const lng = Neighborhoods[val][0].lng - pos.coords.longitude;
           if (lat * lat + lng * lng < minDist) {
