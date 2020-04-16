@@ -4,6 +4,7 @@ import axios from "axios";
 
 import { Button, Popover, Typography, Row, Col } from "antd";
 import Areas from "./CityData/Areas";
+import Neighborhoods from "./CityData/Neighborhoods";
 
 import Config from "./Config";
 import GoogleAnalyticsTag from "./Components/GoogleAnalyticsTag";
@@ -32,8 +33,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     // TODO this is janktown routing
+    var currentArea = Object.keys(Areas)[0];
     const path = window.location.pathname.slice(1).toLowerCase();
-    const currentArea = Areas[path] ? path : Object.keys(Areas)[0];
 
     this.state = {
       faqVisible: false,
@@ -43,24 +44,46 @@ class App extends React.Component {
     };
 
     this.selfRef = React.createRef();
+
+    // Setting position based on closest neighborhoods
+    if (Areas[path]) {
+      this.setState({ currentArea: path });
+    } else if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(pos => {
+        var minDist = Number.MAX_SAFE_INTEGER;
+        Object.keys(Neighborhoods).forEach(val => {
+          const lat = Neighborhoods[val][0].lat - pos.coords.latitude;
+          const lng = Neighborhoods[val][0].lng - pos.coords.longitude;
+          if (lat * lat + lng * lng < minDist) {
+            minDist = lat * lat + lng * lng;
+            this.setState({ currentArea: val });
+          }
+        });
+      });
+    }
   }
 
   showFAQModal() {
     this.setState({ faqVisible: true });
   }
+
   hideFAQModal() {
     this.setState({ faqVisible: false });
   }
+
   showShareModal() {
     this.setState({ shareVisible: true });
   }
+
   hideShareModal() {
     this.setState({ shareVisible: false });
   }
+
   hideAddModal() {
     window.history.pushState({}, "", "/");
     this.setState({ addPlaceVisible: false });
   }
+
   render() {
     return (
       <AreaContext.Provider
