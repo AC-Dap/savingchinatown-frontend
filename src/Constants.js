@@ -1,5 +1,6 @@
 const Constants = {
-  AddPlaceURL: "/addplace"
+  AddPlaceURL: "/addplace",
+  NumOfCities: "four"
 };
 
 export default Constants;

@@ -43,60 +43,60 @@ function FAQModal(props) {
 
   const consumerFAQs = [
     {
-      title: "What is SaveOurFaves?",
-      body:
-        "SaveOurFaves is a directory of Bay Area restaurants and coffee shops that offer online gift cards for purchase. It’s our hope that by providing this resource, we’ll be able to mobilize loyal customers to provide much-needed support for their favorite places in town. We also link to staff donation sites, if they are available."
+      title: "What is SavingChinatown?",
+      body: `Inspired by the similar Bay Area site ${renderLink(
+        "https://saveourfaves.org",
+        "SaveOurFaves"
+      )}, SavingChinatown is a directory of East Asian restaurants and cafes, currently in ${
+        Constants.NumOfCities
+      } cities, that offers online gift cards for purchase. As many East Asian restaurants are currently ${renderLink(
+        "https://www.npr.org/2020/03/02/811363404/when-xenophobia-spreads-like-a-virus",
+        "facing increased hostility"
+      )} considering the source of COVID-19, we wanted to specifically extend support to these restaurants by mobilizing and introducing customers to these places. We also provide links to staff donation sites, if they are available.`
     },
     {
       title: "Why isn’t my favorite business on your site?",
-      body:
-        "Please help us add your fave Bay Area food & beverages spots " +
-        addPlaceLink("here") +
-        ". We're open to adding more small business categories if this catches on."
+      body: `Please help us add your favorite East Asian spots, or any that you've heard about, ${addPlaceLink(
+        "here"
+      )}. We're open to adding more small business categories if this catches on.`
     },
     {
       title:
-        "How else can I support our local businesses beyond purchasing a gift card?",
+        "How else can I support my local businesses beyond purchasing a gift card?",
       body:
-        "Delivery and pickup are great options! Some restaurants that don’t normally offer delivery have started to offer curbside pickup, and others have closed temporarily. Check their website or social media for the latest info, or browse the " + renderLink("https://projects.sfchronicle.com/2020/restaurant-delivery/", "San Francisco Chronicle's list") +
-        " of Bay Area restaurants offering takeout. <br />" +
-        "Tip generously if you can (even for delivery/pickup), since employees are doing extra work and putting their health at risk. <br />" +
-        "Encourage the government to get involved. Sign this " +
-        renderLink("http://chng.it/jM97Sbf9ct", "San Francisco petition") +
-        " to encourage lawmakers to offer emergency small business loans. Please call your US Representative and your Senators. You can be connected to the capitol switchboard at 202-224-3121. Demand that small businesses are part the federal stimulus plan."
+        `Delivery and pickup are great options! Some restaurants that don’t normally offer delivery have started to offer curbside pickup, and others have closed temporarily. Check their website or social media for the latest info!` +
+        "<br />" +
+        `Tip generously if you can (even for delivery/pickup), since employees are doing extra work and putting their health at risk.` +
+        "<br />" +
+        `Encourage the government to get involved. Please call your US Representative and your Senators. You can be connected to the capitol switchboard at (202)-224-3121. Demand that small businesses are part the federal stimulus plan.` +
+        "<br />" +
+        `And, of course, spread the word! Even one extra sale can make a difference for these businesses.`
     },
     {
-      title: "Why is this just for the Bay Area? Can you do this for my city?",
-      body:
-        "As San Francisco natives, we started this project for our community. Over the past days, people have launched similar tools for their specific cities, or even nationally. Check out " +
-        renderLink("https://helpmainstreet.com/", "Help Main Street") +
-        ", " +
-        renderLink("https://givelocal.co/", "GiveLocal") +
-        ", and " +
-        renderLink(
-          "https://rallyforrestaurants.com/",
-          "Rally for Restaurants"
-        ) +
-        "."
+      title: "Why these specific cities?",
+      body: `These ${
+        Constants.NumOfCities
+      } cities just happen to be the ones the creators of this site live in and are familiar with. If you would like to add your own city as well, please let us know through email at ${renderLink(
+        "mailto:info@savingchinatown.org",
+        "info@savingchinatown.org"
+      )}.`
     },
     {
       title: "Who built this? And why?",
-      body:
-        "We’re Kaitlyn & Mike Krieger -- a husband and wife duo in San Francisco. We’re no longer going out because of COVID-19 (San Francisco is under a “shelter in place” ordinance), so we started buying gift cards to help support our favorite cafes and restaurants during this unpredictable time. SaveOurFaves is our simple way to make it easier for people to help local businesses through this difficult time. We got help and advice from some great friends and local business owners, in particular Phil Levin, Zack Schwab, Kristen Berman, Stefanie Krieger, Melissa Dyrdahl, Laura Buhler, Paul Einbund, and Eddie Hernandez. You can contact us with any questions about the site at " +
-        renderLink("mailto:info@saveourfaves.org", "info@saveourfaves.org") +
-        " and see more about why we decided to start it " +
-        renderLink(
-          "https://medium.com/@mikekrieger/launching-saveourfaves-lets-support-restaurants-with-gift-cards-c4fb3e1828cf",
-          "here"
-        ) +
-        "."
+      body: `We're a group of high school students from all across the country (hence the varied cities), eager to help out our local communities and inspired by current resources like ${renderLink(
+        "https://saveourfaves.org",
+        "SaveOurFaves"
+      )}. As many of us come from an East Asian background, we wanted to try and specifically help combat the aversion towards East Asian restaurants and businesses that has arisen during these times, as many of these places are struggling to muster even a few customers per day. We never could have published this site if Mike Krieger, cofounder of SaveOurFaves, didn't generously publish his code online for everyone to use, so we're incredibly grateful towards him for doing so. You can contact us with any questions about the site at ${renderLink(
+        "mailto:info@savingchinatown.org",
+        "info@savingchinatown.org"
+      )}.`
     }
   ];
   const bizFAQs = [
     {
       title: "Why isn’t my business showing up in your search results?",
       body:
-        "Please help us add your Bay Area food/beverage business " +
+        "Please help us add your East Asian food/beverage business " +
         addPlaceLink("here") +
         ". We're open to adding more small business categories if this catches on."
     },
@@ -110,7 +110,10 @@ function FAQModal(props) {
         "I'm running a GoFundMe for my staff, and I'd like to list it on your site",
       body:
         "Please drop us a note via email at " +
-        renderLink("mailto:info@saveourfaves.org", "info@saveourfaves.org")
+        renderLink(
+          "mailto:info@savingchinatown.org",
+          "info@savingchinatown.org"
+        )
     },
     {
       title: "How can I start offering online gift cards?",
@@ -120,7 +123,7 @@ function FAQModal(props) {
     {
       title: "How can I encourage customers to buy gift cards?",
       body:
-        "People are looking for ways they can support their favorite businesses, so don’t be afraid to let them know that gift cards will help. Reach out to your community on Facebook, Twitter, and Instagram, and use your email list to get in touch with your customers. Ask them to consider buying a gift card for one month of spending to help you weather this storm and keep paying staff, so that you can continue offering great food/coffee/etc. for years to come."
+        "People are looking for ways they can support their favorite businesses, so don’t be afraid to let them know that gift cards will help. Reach out to your community on Facebook, Twitter, and Instagram, and use your email list to get in touch with your customers. Ask them to consider buying a gift card for one month of spending to help you weather this storm and keep paying staff, so that you can continue offering great food/coffee/etc for years to come."
     }
   ];
   return (

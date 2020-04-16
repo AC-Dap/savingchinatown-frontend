@@ -165,7 +165,7 @@ export class NeighborhoodCards extends React.Component {
       <>
         <div className="explore-neighborhood-section">
           <Title className="section-title" level={4}>
-            Or explore by neighborhood in{" "}
+            Or explore the city of{" "}
             <AreaDropdown
               currentArea={this.props.currentArea}
               updateArea={this.props.updateArea}
