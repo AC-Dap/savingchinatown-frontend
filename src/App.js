@@ -15,6 +15,8 @@ import NeighborhoodCards from "./Components/NeighborhoodCards";
 import PlaceFilterDisplay from "./Components/PlaceFilterDisplay";
 import ShareOptions from "./Components/ShareOptions";
 
+import lantern from "./paper_lantern2.svg";
+
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 
@@ -164,8 +166,23 @@ class App extends React.Component {
                   xs={{ span: 18, offset: 3 }}
                   span={16}
                   offset={4}
-                  style={{ textAlign: "center", padding: "20px 0px" }}
+                  style={{
+                    textAlign: "center",
+                    padding: "20px 0px",
+                    "max-width": "100%",
+                    margin: "auto"
+                  }}
                 >
+                  <img
+                    src={lantern}
+                    alt={""}
+                    style={{ width: "10%", height: "200px", float: "left" }}
+                  />
+                  <img
+                    src={lantern}
+                    alt={""}
+                    style={{ width: "10%", height: "200px", float: "right" }}
+                  />
                   <Title
                     level={1}
                     style={{ color: "white", textAlign: "center" }}
@@ -240,8 +257,8 @@ class App extends React.Component {
                       repayments, insurance, supplies, repairs – the list goes
                       on. Even successful restaurants have razor thin margins of
                       3-5%, and a third have struggled to pay employees at least
-                      once. The “shelter-in-place” ordinance keeping customers
-                      at home could tip the balance into bankruptcy.
+                      once. The “stay at home ordinance keeping customers at
+                      home could tip the balance into bankruptcy.
                     </p>
                   </Col>
                 </Row>
