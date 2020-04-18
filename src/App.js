@@ -7,7 +7,7 @@ import Areas from "./CityData/Areas";
 import Neighborhoods from "./CityData/Neighborhoods";
 
 import Config from "./Config";
-import GoogleAnalyticsTag from "./Components/GoogleAnalyticsTag";
+import { Helmet } from "react-helmet";
 import FAQModal from "./Components/FAQModal";
 import AddNewPlaceModal from "./Components/AddNewPlaceModal";
 import LogEngagementEvent from "./Logging";
@@ -100,6 +100,21 @@ class App extends React.Component {
           }
         }}
       >
+        <Helmet>
+          <script
+            async
+            src={
+              "https://www.googletagmanager.com/gtag/js?id=" +
+              Config.GoogleAnalyticsID
+            }
+          ></script>
+          <script>
+            {"window.dataLayer = window.dataLayer || []; " +
+              "function gtag(){dataLayer.push(arguments);} " +
+              "gtag('js', new Date()); " +
+              "gtag('config', 'UA-163781273-1');"}
+          </script>
+        </Helmet>
         <div>
           <div style={{ marginTop: "0px" }}>
             <FAQModal
@@ -266,7 +281,6 @@ class App extends React.Component {
             </Row>
           </div>
         </div>
-        <GoogleAnalyticsTag analyticsID={Config.GoogleAnalyticsID} />
       </AreaContext.Provider>
     );
   }
