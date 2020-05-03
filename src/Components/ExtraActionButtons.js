@@ -1,32 +1,53 @@
 import React from "react";
 import LogEngagementEvent from "../Logging";
+import { EmailSubscription } from "./EmailSubscription";
 
 export function ExtraActionButtons(props) {
-  function handleClick(buttonData, placeID) {
-    LogEngagementEvent("user-click", buttonData.log, placeID);
-    window.open(buttonData.url);
+  function handleClick(value, placeID, url) {
+    LogEngagementEvent("user-click", value, placeID);
+    window.open(url);
   }
+
   const place = props.place;
-  const donateText = "donate to staff";
-  const takeoutText = "order takeout";
-  const classOrder = ["extra-action-button-1", "extra-action-button-2"];
-  const takeout = { url: place.takeoutURL, log: "takeout", text: takeoutText };
-  const donation = { url: place.donationURL, log: "donate", text: donateText };
-  const toRender = [takeout, donation].filter(value => {
-    return value.url !== null && value.url !== "";
-  });
   var spansToRender = [];
-  toRender.forEach((value, index) => {
+  if (place.giftCardURL) {
     spansToRender.push(
       <span
         onClick={e => {
-          handleClick(value, place.placeID);
+          handleClick("takeout", place.placeID, place.takeoutURL);
         }}
-        className={"extra-action-button " + classOrder[index]}
+        className={
+          "extra-action-button " +
+          `extra-action-button-${spansToRender.length + 1}`
+        }
       >
-        {value.text}
+        order takeout
       </span>
     );
-  });
+  } else {
+    spansToRender.push(
+      <EmailSubscription
+        place={place}
+        buttonClass={`extra-action-button extra-action-button-${spansToRender.length +
+          1}`}
+      />
+    );
+  }
+  if (place.donationURL) {
+    spansToRender.push(
+      <span
+        onClick={e => {
+          handleClick("donate", place.placeID, place.donationURL);
+        }}
+        className={
+          "extra-action-button " +
+          `extra-action-button-${spansToRender.length + 1}`
+        }
+      >
+        donate to staff
+      </span>
+    );
+  }
+
   return <div className="extra-button-container">{spansToRender}</div>;
 }

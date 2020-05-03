@@ -128,14 +128,7 @@ export class EmailSubscription extends React.Component {
           </div>
         }
       >
-        <Button
-          shape="round"
-          size="default"
-          className={this.props.buttonClass}
-          type="default"
-        >
-          Request Gift Card
-        </Button>
+        <span className={this.props.buttonClass}>request gift card</span>
       </Popover>
     );
   }

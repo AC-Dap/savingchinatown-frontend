@@ -30,7 +30,24 @@ export class CallToActionButton extends React.Component {
           </Button>
         )}
         {!place.giftCardURL && (
-          <EmailSubscription place={this.props.place} buttonClass={className} />
+          <Button
+            shape="round"
+            size={size}
+            className={className}
+            type="default"
+            onClick={event => {
+              LogEngagementEvent(
+                "user-click",
+                place.takeoutURL ? "takeout" : "contact",
+                place.placeID
+              );
+              place.takeoutURL
+                ? window.open(place.takeoutURL)
+                : window.open(place.placeURL);
+            }}
+          >
+            {place.takeoutURL ? "Order Takeout" : "Contact them"}
+          </Button>
         )}
       </div>
     );
