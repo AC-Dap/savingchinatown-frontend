@@ -3,6 +3,8 @@ import { Button } from "antd";
 import { FacebookProvider, Share } from "react-facebook";
 export class ShareOptions extends React.Component {
   shareToFB() {}
+
+  // TODO update sharing options
   render() {
     return (
       <div>

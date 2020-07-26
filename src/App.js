@@ -206,8 +206,8 @@ class App extends React.Component {
                     Help save it.
                   </Title>
                   <div className="header-sans">
-                    Gift cards help "flatten the curve" of lost income from
-                    COVID-19.
+                    As your community starts to reopen, help ensure that these
+                    restaurants can too.
                   </div>
                 </Col>
                 <Col
@@ -253,8 +253,9 @@ class App extends React.Component {
                     <p>
                       Our small businesses need us more than ever. Even though
                       we can’t leave home, we can still support local
-                      restaurants by buying gift cards. It’s basically a
-                      mini-loan, so buy one now and make a plan to use it later.
+                      restaurants through gift cards and delivery. They're
+                      virtually risk-free, so you can help keep yourself and
+                      these restaurants safe.
                     </p>
                   </Col>
                   <Col
@@ -272,7 +273,7 @@ class App extends React.Component {
                       repayments, insurance, supplies, repairs – the list goes
                       on. Even successful restaurants have razor thin margins of
                       3-5%, and a third have struggled to pay employees at least
-                      once. The “stay at home ordinance keeping customers at
+                      once. The “stay at home" ordinance keeping customers at
                       home could tip the balance into bankruptcy.
                     </p>
                   </Col>
