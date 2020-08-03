@@ -27,4 +27,4 @@ Once built, you can deploy that build/ folder to the backend Nginx container und
 
 ### Other notes
 
-The snugtop.jpeg image was provided by The Snug in San Francisco.
+The metaimage.jpeg image was provided by cegoh on Pixabay.
