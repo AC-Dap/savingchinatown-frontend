@@ -1,4 +1,4 @@
-This is the frontend to [savingchinatown.org](savingchinatown.org), forked from [the code](https://github.com/mikeyk/saveourfaves-frontend) by Mikey K; it pairs with [the backend code, also open source](https://github.com/DaPurpleDerple/savingchinatown-backend), so please read the README there as well.
+This is the frontend to [savingchinatown.org](https://www.savingchinatown.org), forked from [the code](https://github.com/mikeyk/saveourfaves-frontend) by Mikey K; it pairs with [the backend code, also open source](https://github.com/DaPurpleDerple/savingchinatown-backend), so please read the README there as well.
 
 You'll need to copy over the src/Config.js.example file to src/Config.js and update it with your own Google Maps API key (needs Places API enabled) and a Google Analytics ID.
 
